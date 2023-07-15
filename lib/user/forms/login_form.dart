@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'dart:convert';
 
+import '../../home/screens/home_screen.dart';
 import '../../style/style.dart';
 import '../../widgets/toast_widget.dart';
 
@@ -112,19 +115,23 @@ void showLoginForm(context, role, color) {
                                     showToastWidget( "Please enter password.", colorError);
                                   } else {
 
-                                    try{
-                                      showDialog(
-                                        context: context,
-                                        barrierDismissible: true,
-                                        builder: (context) => const Center(
-                                          child: CircularProgressIndicator(),
-                                        )
-                                    );
+                                    try {
+                                      await FirebaseAuth.instance.signInWithEmailAndPassword(
+                                        email: emailController.text.trim(),
+                                        password: passwordController.text.trim(),
+                                      );
 
+                                      // Set shared preferences
+                                      SharedPreferences prefs = await SharedPreferences.getInstance();
+                                      prefs.setString('color', color);
+                                      prefs.setString('role', role.toString().toLowerCase());
 
+                                      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+                                          builder: (context) => HomeScreen()), (Route route) => false);
 
-                                    } catch(e){
+                                    } on FirebaseAuthException catch (e) {
                                       Navigator.pop(context);
+                                      showToastWidget(e.message.toString(), colorError);
                                     }
 
 

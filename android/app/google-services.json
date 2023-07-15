@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "486066092968",
+    "firebase_url": "https://ithute-92c92.firebaseio.com",
+    "project_id": "ithute-92c92",
+    "storage_bucket": "ithute-92c92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486066092968:android:5f776193288629a2317b9d",
+        "android_client_info": {
+          "package_name": "com.philoxenic.ithute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "486066092968-mpbeljfa3953gb3tvk60cdgv1rnmkn9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo-IhIOqRMYr2DEPIMtzNIGqHHLUGMKb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "486066092968-mpbeljfa3953gb3tvk60cdgv1rnmkn9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
