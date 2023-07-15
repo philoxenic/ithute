@@ -51,6 +51,9 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+
+        minSdkVersion 21
+        compileSdkVersion 33
     }
 
     buildTypes {
@@ -62,7 +65,7 @@ android {
     }
 }
 
-apply plugin: 'com.google.gms.google-services'
+
 
 flutter {
     source '../..'
@@ -71,3 +74,5 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
+apply plugin: 'com.google.gms.google-services'
