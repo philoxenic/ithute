@@ -1,8 +1,8 @@
-import 'package:docteng/style/style.dart';
-import 'package:docteng/widgets/onboarding_widget.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../style/style.dart';
+import '../../widgets/onboarding_widget.dart';
 
 class OnboardingScreen extends StatelessWidget {
   OnboardingScreen({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class OnboardingScreen extends StatelessWidget {
         children: [
           OnboardingPage(
             image: Image.asset("assets/images/3.png"),
-            title: "Welcome to Docteng",
+            title: "Welcome to iThute",
             description:
             "A doctor's appointment booking app. Find the best doctors in your area.",
             noOfScreen: noOfScreens,
